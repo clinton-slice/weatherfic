@@ -8,7 +8,9 @@ interface ErrorMessageProps {
 const ErrorMessage: React.FC<ErrorMessageProps> = ({ message, onRetry }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-zinc-800 p-4">
-      <div className="text-red-500 text-xl mb-4">Error: {message}</div>
+      <div role="alert" className="text-red-500 text-xl mb-4">
+        Error: {message}
+      </div>
       {onRetry && (
         <button
           onClick={onRetry}
