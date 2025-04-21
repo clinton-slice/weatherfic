@@ -25,7 +25,7 @@ const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({
   const { main: condition, description } = forecast.weather[0];
 
   const windSpeed = forecast.wind.speed;
-  const windSpeedMph = Math.round(windSpeed * 2.237);
+  const windSpeedKmh = Math.round(windSpeed * 3.6);
 
   return (
     <div className="flex flex-col items-center gap-0 justify-center">
@@ -44,11 +44,16 @@ const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-6 w-full max-w-xs sm:max-w-sm">
-        <StatItem icon="💨" value={`${windSpeedMph} mph`} />
-        <StatItem icon="💧" value={`${humidity} %`} />
+        <StatItem
+          icon="💨"
+          value={`${windSpeedKmh} km/h`}
+          ariaLabel="Wind speed"
+        />
+        <StatItem icon="💧" value={`${humidity} %`} ariaLabel="Humidity" />
         <StatItem
           icon="🌡"
           value={`↓ ${Math.round(temp_min)}° – ↑ ${Math.round(temp_max)}°`}
+          ariaLabel="Temperature range (min/max)"
         />
       </div>
     </div>
