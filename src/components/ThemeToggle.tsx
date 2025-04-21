@@ -12,6 +12,7 @@ const ThemeToggle = () => {
 
       <button
         onClick={() => setTheme(isDark ? "light" : "dark")}
+        aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
         className={`relative inline-flex h-8 w-16 items-center rounded-full transition-colors ${
           isDark ? "bg-zinc-600" : "bg-zinc-300"
         }`}
