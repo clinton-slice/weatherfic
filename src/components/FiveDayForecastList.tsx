@@ -18,11 +18,13 @@ const FiveDayForecastList: React.FC<FiveDayForecastListProps> = ({
   }
 
   return (
-    <div className="space-y-3">
+    <ul className="space-y-3">
       {forecasts.map((dayOutlook) => (
-        <FiveDayForecastItem key={dayOutlook.day} forecast={dayOutlook} />
+        <li key={dayOutlook.day}>
+          <FiveDayForecastItem forecast={dayOutlook} />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

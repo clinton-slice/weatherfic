@@ -18,19 +18,20 @@ const HourlyForecastList: React.FC<HourlyForecastListProps> = ({
   }
 
   return (
-    <div
-      className={`grid lg:grid-cols-6 sm:grid-cols-4 md:grid-cols-3 grid-cols-3 gap-4 pb-4 justify-center`}
+    <ul
+      className={`grid lg:grid-cols-6 sm:grid-cols-4 md:grid-cols-3 grid-cols-3 gap-4 pb-4 justify-items-center`}
     >
       {forecasts.map((hourData, index) => (
-        <HourlyForecastCard
-          key={index}
-          day={hourData.hour}
-          temp={hourData.temp}
-          condition={hourData.condition}
-          description={hourData.description}
-        />
+        <li key={index} className="flex">
+          <HourlyForecastCard
+            day={hourData.hour}
+            temp={hourData.temp}
+            condition={hourData.condition}
+            description={hourData.description}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
