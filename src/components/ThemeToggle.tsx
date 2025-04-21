@@ -30,5 +30,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-
-// className={`relative inline-flex h-6 w-12 items-center rounded-full bg-zinc-300 dark:bg-zinc-600 transition-colors`}
