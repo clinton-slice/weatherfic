@@ -44,12 +44,11 @@ const CurrentWeatherDisplay: React.FC<CurrentWeatherDisplayProps> = ({
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-6 w-full max-w-xs sm:max-w-sm">
-        <StatItem icon="💨" value={`${windSpeedMph} mph`} label="Wind speed" />
-        <StatItem icon="💧" value={`${humidity} %`} label="Humidity" />
+        <StatItem icon="💨" value={`${windSpeedMph} mph`} />
+        <StatItem icon="💧" value={`${humidity} %`} />
         <StatItem
           icon="🌡"
           value={`↓ ${Math.round(temp_min)}° – ↑ ${Math.round(temp_max)}°`}
-          label="Temperature range"
         />
       </div>
     </div>
